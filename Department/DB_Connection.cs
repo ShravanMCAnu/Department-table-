@@ -95,7 +95,7 @@ namespace Department
 
 
 
-            SqlCommand cmd2 = new SqlCommand("delete from department  Where Employee_Id=" + deptid + "", sqlCon);
+            SqlCommand cmd2 = new SqlCommand("delete from department  Where department_Id=" + deptid + "", sqlCon);
 
             cmd2.ExecuteNonQuery();
             Console.WriteLine("deleted Sucessfully");
@@ -120,15 +120,12 @@ namespace Department
 
             sqlCon.Close();
 
+            Console.WriteLine("Enter department  details you want to insert into databse..... ");
+
             Console.WriteLine("Enter department  Name ");
             string? deptName = Console.ReadLine();
             Console.WriteLine("Enter department shortName");
-            int shortname = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Employee Gender");
-            string? EmpGender = Console.ReadLine();
-            Console.WriteLine("Enter Department ID Based on Employee");
-            int EmpDeptID = int.Parse(Console.ReadLine());
-
+            string? shortname = Console.ReadLine();
             sqlCon.Open();
             SqlCommand cmd5 = new SqlCommand("insert into  Employee values('" + deptName + "', " + shortname + ", )", sqlCon);
             cmd5.ExecuteNonQuery();
