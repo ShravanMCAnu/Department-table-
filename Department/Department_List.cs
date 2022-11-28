@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Department
+﻿namespace Department
 {
     internal class Department_List : Dept_Properties
     {
